@@ -1,0 +1,34 @@
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <title>PDFメーカー</title>
+  <script src="https://unpkg.com/pdf-lib"></script>
+  <script src="https://unpkg.com/@pdf-lib/fontkit/dist/fontkit.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container d-flex flex-column">
+    <h1 class="text-center my-5">PDFメーカー</h1>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="title" placeholder="name@example.com">
+      <label for="title">タイトル</label>
+    </div>
+    <div class="form-floating">
+      <textarea class="form-control" placeholder="Leave a comment here" id="content" style="height: 800px"></textarea>
+      <label for="content">本文</label>
+    </div>
+    <div class="text-center my-5">
+      <button id="btn" class="w-50 btn btn-primary py-3">作成</button>
+    </div>
+    <iframe id="pdf" style="width: 100%; height: 100%;"></iframe>
+  </div>
+</body>
+
+
+</body>
+<script src="script.js"></script>
+</html>
