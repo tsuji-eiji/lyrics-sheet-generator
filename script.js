@@ -27,5 +27,12 @@ async function createPdf() {
 
 // ボタンクリック
 document.getElementById('btn').addEventListener('click', () => {
-  createPdf();
+  // loadingを表示
+  const loading = document.getElementById('loading');
+  loading.style.display = 'flex';
+  // PDFを出力したらloadingを非表示
+  createPdf().then(() => {
+    loading.style.display = 'none';
+  });
+  
 });
