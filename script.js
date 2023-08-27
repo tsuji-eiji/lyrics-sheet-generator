@@ -34,5 +34,32 @@ document.getElementById('btn').addEventListener('click', () => {
   createPdf().then(() => {
     loading.style.display = 'none';
   });
-  
+});
+
+// 保存ボタンクリック
+document.getElementById('save-btn').addEventListener('click', () => {
+  const msg = "入力内容を保存しますか？\n※入力内容はご利用の端末のローカルストレージに保存されます。\n※過去に保存した内容がある場合は上書きされます。";
+  // 確認ダイアログ
+  if(confirm(msg)) {
+    // タイトルを保存
+    localStorage.setItem('title', document.getElementById('title').value);
+    // 内容を保存
+    localStorage.setItem('content', document.getElementById('content').value);
+  }
+});
+
+// 呼び出しボタンクリック
+document.getElementById('load-btn').addEventListener('click', () => {
+  const msg = "以前、保存した入力内容を呼び出しますか？\n※現在の入力内容は破棄されます。";
+  // 確認ダイアログ
+  if(confirm(msg)) {
+    // タイトルを取得
+    const title = localStorage.getItem('title');
+    // 内容を取得
+    const content = localStorage.getItem('content');
+    // タイトルを入力欄にセット
+    document.getElementById('title').value = title;
+    // 内容を入力欄にセット
+    document.getElementById('content').value = content;
+  }
 });
